@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://uuvo52bf6xcj"]
+
+[ext_resource type="Texture2D" uid="uid://c31d8x85bfrm7" path="res://images/mainMenuBackground.png" id="1_clbkb"]
+[ext_resource type="Script" uid="uid://b3ijv6vyheuwu" path="res://scenes/main_menu.gd" id="1_ldpc3"]
+[ext_resource type="Texture2D" uid="uid://xpmqxttlu3ic" path="res://images/gameNameTitle.png" id="2_ldpc3"]
+[ext_resource type="Texture2D" uid="uid://b8fvlqyp8fxlq" path="res://images/continueGameButton.png" id="3_y35fp"]
+[ext_resource type="Texture2D" uid="uid://owg7v34awp5o" path="res://images/newGameButton.png" id="4_dj72i"]
+[ext_resource type="Texture2D" uid="uid://dj5cov1rvgn56" path="res://images/optionsButton.png" id="5_6b2wv"]
+[ext_resource type="AudioStream" uid="uid://l641ye7nvqnj" path="res://music/mainMenuSong.mp3" id="6_tov5d"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_ldpc3")
+
+[node name="mainMenuBackground" type="Sprite2D" parent="."]
+position = Vector2(577.5, 328)
+scale = Vector2(0.754557, 0.630859)
+texture = ExtResource("1_clbkb")
+
+[node name="gameNameTitle" type="Sprite2D" parent="."]
+position = Vector2(269, 115)
+scale = Vector2(0.596573, 0.596573)
+texture = ExtResource("2_ldpc3")
+
+[node name="continueGameButton" type="MenuButton" parent="."]
+offset_left = 855.0
+offset_top = 142.0
+offset_right = 863.0
+offset_bottom = 150.0
+icon = ExtResource("3_y35fp")
+
+[node name="newGameButton" type="MenuButton" parent="."]
+offset_left = 854.0
+offset_top = 247.0
+offset_right = 862.0
+offset_bottom = 255.0
+icon = ExtResource("4_dj72i")
+
+[node name="optionsButton" type="MenuButton" parent="."]
+offset_left = 851.0
+offset_top = 338.0
+offset_right = 859.0
+offset_bottom = 346.0
+icon = ExtResource("5_6b2wv")
+
+[node name="mainMenuMusic" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+position = Vector2(746.6, 711)
+stream = ExtResource("6_tov5d")
+autoplay = true
+parameters/looping = true
+
+[connection signal="pressed" from="continueGameButton" to="." method="_on_continue_game_button_pressed"]
+[connection signal="pressed" from="newGameButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="optionsButton" to="." method="_on_options_button_pressed"]
