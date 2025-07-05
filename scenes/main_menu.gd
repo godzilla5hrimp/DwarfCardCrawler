@@ -18,3 +18,11 @@ func _on_options_button_pressed():
 
 func _on_continue_game_button_pressed():
 	print("CONTINE button pressed")
+
+
+func _on_continue_game_button_button_down() -> void:
+	pass # Replace with function body.
+
+
+func _on_continue_game_button_toggledLALALA(toggled_on: bool) -> void:
+	pass # Replace with function body.
